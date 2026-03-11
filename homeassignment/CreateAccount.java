@@ -68,7 +68,7 @@ public class CreateAccount {
 
          // close the browser window
 
-         //driver.close();
+         driver.close();
 
 
         
@@ -77,3 +77,4 @@ public class CreateAccount {
     }
 
 }
+
