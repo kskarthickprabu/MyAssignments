@@ -58,7 +58,7 @@ public class CreatLead {
 
         // close the Browser
 
-       // driver.close();
+        driver.close();
 
 
         
@@ -68,3 +68,4 @@ public class CreatLead {
     }
 
 }
+
