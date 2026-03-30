@@ -1,17 +1,13 @@
 package org.testleaf.week5.day1.homeassignment;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class WebTrailEtrain {
 
