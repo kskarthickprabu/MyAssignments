@@ -69,6 +69,7 @@ public class WebTrailEtrain {
         } else {
             System.out.println("Duplicate train names found");
         }
-
+     // close the web page
+        driver.quite();
     }
 }
