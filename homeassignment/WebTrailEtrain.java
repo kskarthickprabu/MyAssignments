@@ -1,13 +1,15 @@
 package org.testleaf.week5.day1.homeassignment;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebTrailEtrain {
 
@@ -42,30 +44,34 @@ public class WebTrailEtrain {
         // Retrieve the train names from the web table.
 
         // Count the no of column for the 3rd row
-        List<WebElement> trainsName = driver
+        List<WebElement> trainsList = driver
                 .findElements(By.xpath("//div[@id='divTrainsList']/table/tbody/tr/td[2]"));
-        int Column2Count = trainsName.size();
+        int column2Count = trainsList.size();
 
-        System.out.println("Total no of trains" + " " + Column2Count);
+        System.out.println("Total no of trains" + " " + column2Count);
 
-        // Print All the data of column 2
+        // Retrieve all the data of column 2 from the table
+        List<String> trainName = new ArrayList<>();
 
-        for (int i = 0; i < trainsName.size() - 1; i++) {
-            String column2Text = trainsName.get(i).getText();
-            System.out.println("Train Name" + " " + column2Text);
+        for (WebElement train : trainsList) {
+            String name = train.getText();
 
+            trainName.add(name);
         }
 
-        // find the duplicates if any or not
-        List<String> trainName = new ArrayList<>();
+        // convert the list to set
+
         Set<String> uniqueNames = new HashSet<>(trainName);
+
+        // compare size
 
         if (trainName.size() == uniqueNames.size()) {
             System.out.println("No duplicate train names");
         } else {
             System.out.println("Duplicate train names found");
         }
-     // close the web page
-        driver.quite();
+
+        driver.quit();
+
     }
 }
