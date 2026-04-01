@@ -15,7 +15,7 @@ public class ActionsClass {
 
     public static void main(String[] args) throws IOException {
 
-         // Launch the Browser & Load the URL
+        // Launch the Browser & Load the URL
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://www.amazon.in/");
         driver.manage().window().maximize();
@@ -23,32 +23,31 @@ public class ActionsClass {
         // Click the continue shopping button
         driver.findElement(By.className("a-button-text")).click();
 
-    //Scroll down to the "Conditions of Use and Sale" section at the bottom of the page using Actions class.
+        // Scroll down to the "Conditions of Use and Sale" section at the bottom of the
+        // page using Actions class.
 
-    WebElement scrollactioElement = driver.findElement(By.linkText("Conditions of Use & Sale"));
+        WebElement scrollActionElement = driver.findElement(By.linkText("Conditions of Use & Sale"));
 
-    // declare the actions call
-    Actions act= new Actions(driver);
+        // declare the actions call
+        Actions act = new Actions(driver);
 
-    // create object to call the methods
+        // create object to call the methods
 
-    act.scrollToElement(scrollactioElement).perform();
+        act.scrollToElement(scrollActionElement).perform();
 
-    //Print the text of the Element
-    String text = scrollactioElement.getText();
-    System.out.println("The located element text is"+" "+ text);
+        // Print the text of the Element
+        String text = scrollActionElement.getText();
+        System.out.println("The located element text is" + " " + text);
 
-    //screenshot of the displayed webpage.
+        // screenshot of the displayed webpage.
 
-       File src = driver.getScreenshotAs(OutputType.FILE);
+        File src = driver.getScreenshotAs(OutputType.FILE);
         File dest = new File("./screenshots/amazon.png");
         FileUtils.copyFile(src, dest);
 
         // close the browser
         driver.quit();
-   
 
-        
     }
 
 }
